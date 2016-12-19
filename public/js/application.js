@@ -33,8 +33,8 @@ var bindEventHandlers = function() {
   $('.horse-list').on('click', 'a', function(event){
     event.preventDefault();
     console.log( $(this).closest('li').find('.horse-details'));
-    $('.horse-details').hide();
-    $(this).closest('li').find('.horse-details').show();
+    // $('.horse-details').hide();
+    $(this).closest('li').find('.horse-details').toggle();
   });
 
 }
