@@ -193,3 +193,7 @@ form {
   .input-group-input:focus + .input-group-label {
     color: #428bca;
   }
+
+.hidden {
+  display: none;
+}
