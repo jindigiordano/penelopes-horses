@@ -10,8 +10,7 @@ end
 
 post '/horses' do
   @horse = Horse.new(params[:horse])
-  @horse.save!
-  p params
+  @horse.save
   if request.xhr?
     erb :"_li_partial", locals: {horse: @horse}, layout: false
   else
@@ -25,5 +24,9 @@ end
 
 get '/horses/:id' do
   @horse = Horse.find(params[:id])
-  erb :"/horses/show"
+  if request.xhr?
+    erb :"_show_horse", locals: {horse: @horse}, layout: false
+  else
+    erb :"/horses/show"
+  end
 end

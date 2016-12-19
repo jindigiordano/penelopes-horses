@@ -3,6 +3,7 @@
 <ul class="list">
   <% @horses.each do |horse| %>
     <%=erb :"_li_partial", locals: {horse: horse} %>
+    <!-- <%=erb :"_show_horse", locals: {horse: horse} %> -->
   <% end %>
 </ul>
 
