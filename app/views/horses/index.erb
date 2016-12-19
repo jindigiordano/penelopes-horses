@@ -2,9 +2,7 @@
 
 <ul class="list">
   <% @horses.each do |horse| %>
-    <li class="list-item col-1-2">
-      <a class="big fancy-text light-link" href="/horses/<%= horse.id%>"><%= horse.name %></a>
-    </li>
+    <%=erb :"_li_partial", locals: {horse: horse} %>
   <% end %>
 </ul>
 

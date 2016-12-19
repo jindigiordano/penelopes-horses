@@ -12,11 +12,15 @@ post '/horses' do
   @horse = Horse.new(params[:horse])
   @horse.save!
   p params
-  # if @horse.save
-  #   redirect "/horses/#{@horse.id}"
-  # else
-  #   erb :"/horses/new"
-  # end
+  if request.xhr?
+    erb :"_li_partial", locals: {horse: @horse}, layout: false
+  else
+    if @horse.save
+      redirect "/horses/#{@horse.id}"
+    else
+      erb :"/horses/new"
+    end
+  end
 end
 
 get '/horses/:id' do
