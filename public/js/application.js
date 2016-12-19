@@ -30,26 +30,11 @@ var bindEventHandlers = function() {
 
   });
 
-  $('.list').on('click', 'a', function(event){
+  $('.horse-list').on('click', 'a', function(event){
     event.preventDefault();
-    var link = event.target;
-    var url = $(link).attr('href');
-    console.log(url);
-    console.log($(link).closest('li'));
-    $.ajax({
-      url: url,
-      method: 'GET'
-    }).done(function(response){
-      console.log($('.horse-details'));
-      if ($('.horse-details').children().length > 0) {
-        $('.horse-details').remove();
-      }
-      else {
-        $(link).closest('li').append(response);
-      }
-    }).fail(function(){
-      console.log('Fail.');
-    })
-  })
+    console.log( $(this).closest('li').find('.horse-details'));
+    $('.horse-details').hide();
+    $(this).closest('li').find('.horse-details').show();
+  });
 
 }

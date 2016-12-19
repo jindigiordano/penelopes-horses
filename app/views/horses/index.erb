@@ -1,9 +1,8 @@
 <h1 class="big">Meet the Herd</h1>
 
-<ul class="list">
+<ul class="list horse-list">
   <% @horses.each do |horse| %>
-    <%=erb :"_li_partial", locals: {horse: horse} %>
-    <!-- <%=erb :"_show_horse", locals: {horse: horse} %> -->
+    <%=erb :"_new", locals: {horse: horse} %>
   <% end %>
 </ul>
 

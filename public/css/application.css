@@ -197,3 +197,8 @@ form {
 .hidden {
   display: none;
 }
+
+.horse-details .list-item {
+  float: left;
+  width: 90px;
+}
