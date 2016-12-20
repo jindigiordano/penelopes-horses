@@ -12,7 +12,7 @@ post '/horses' do
   @horse = Horse.new(params[:horse])
   @horse.save
   if request.xhr?
-    erb :"_new", locals: {horse: @horse}, layout: false
+    erb :"_horse_item", locals: {horse: @horse}, layout: false
   else
     if @horse.save
       redirect "/horses/#{@horse.id}"
@@ -24,9 +24,5 @@ end
 
 get '/horses/:id' do
   @horse = Horse.find(params[:id])
-  if request.xhr?
-    erb :"_show", locals: {horse: @horse}, layout: false
-  else
-    erb :"/horses/show"
-  end
+  erb :"/horses/show"
 end

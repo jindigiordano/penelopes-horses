@@ -15,14 +15,13 @@ var bindEventHandlers = function() {
     $(event.target).addClass('hidden');
 
     var horse_data = $('#new-horse-form').serialize();
-    console.log(horse_data);
 
     $.ajax({
       url: '/horses',
       method: 'POST',
       data: horse_data
       }).done(function(response){
-      $('.list').append(response);
+      $('.horse-list').append(response);
       $('#new-horse-form').trigger('reset');
     }).fail(function(){
       console.log('Failed');
@@ -32,8 +31,7 @@ var bindEventHandlers = function() {
 
   $('.horse-list').on('click', 'a', function(event){
     event.preventDefault();
-    console.log( $(this).closest('li').find('.horse-details'));
-    // $('.horse-details').hide();
+    console.log($(this).closest('li').find('.horse-details'));
     $(this).closest('li').find('.horse-details').toggle();
   });
 
