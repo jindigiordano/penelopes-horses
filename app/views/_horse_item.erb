@@ -1,0 +1,4 @@
+<li class="list-item horse-item col-1-2">
+  <a class="big fancy-text light-link" href="/horses/<%=horse.id%>"><%= horse.name %></a>
+  <%=erb :"_horse_details", locals: {horse: horse} %>
+</li>

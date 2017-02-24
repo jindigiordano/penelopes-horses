@@ -193,3 +193,12 @@ form {
   .input-group-input:focus + .input-group-label {
     color: #428bca;
   }
+
+.hidden {
+  display: none;
+}
+
+.horse-details .list-item {
+  float: left;
+  width: 90px;
+}
